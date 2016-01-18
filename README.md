@@ -11,7 +11,7 @@ The core logic is found on [lines ~41-44](existential_rick_bot.py#L41):
 
 ``` python
 def isExistentialQuestion(message):
-  return message[-1] == '?'
+  return message[-1] == '?' and 'why' in message.lower()
 
 def getAnswerToExistentialQuestion():
   return "The answer is don't think about it."
