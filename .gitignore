@@ -1,3 +1,9 @@
+# Ignore reddit username/password config file
+auth_config.py
+
+# Ignore tracking files
+*.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
