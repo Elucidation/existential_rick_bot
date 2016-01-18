@@ -125,7 +125,7 @@ while running:
             print("> %s - Already submitted skipping..." % datetime.now())
             break
           except praw.errors.RateLimitExceeded as e:
-            print("> %s - Rate Limit Error for commenting on {}, sleeping for {} before retrying...".format(datetime.now(), submission.id, e.sleep_time))
+            print("> {} - Rate Limit Error for commenting on {}, sleeping for {} before retrying...".format(datetime.now(), submission.id, e.sleep_time))
             waitWithComments(e.sleep_time)
 
   
