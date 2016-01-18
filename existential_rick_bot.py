@@ -108,7 +108,7 @@ while running:
       # check if submission title is a question
       if isExistentialQuestion(submission.title):
         # generate response
-        msg = "# %s%s" % (getAnswerToExistentialQuestion(), getResponseFooter())
+        msg = "## %s%s" % (getAnswerToExistentialQuestion(), getResponseFooter())
         # respond, keep trying till success
         while True:
           try:
