@@ -59,8 +59,11 @@ def logInfoPerSubmission(submission, count, count_actual):
   if ((time.time() - logInfoPerSubmission.last) > 120):
     print("\n\t---\n\t%s - %d processed submissions, %d read\n" % (datetime.now(), count_actual, count))
     logInfoPerSubmission.last = time.time()
-  
-  print("#%d Submission(%s): %s" % (count, submission.id, str(submission).encode('ascii','ignore')))
+  try:
+    print("#%d Submission(%s): %s" % (count, submission.id, submission))
+  except UnicodeDecodeError as e:
+    print("#%d Submission(%s): <ignoring unicode>" % (count, submission.id))
+
 
 logInfoPerSubmission.last = time.time() # 'static' variable
 
