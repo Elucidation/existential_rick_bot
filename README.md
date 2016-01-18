@@ -14,7 +14,7 @@ def getAnswerToExistentialQuestion():
 
 ExistentialRickBot leaves a comment on such submissions, the response looks a bit like this:
 
-#### The answer is don't think about it.
+The answer is don't think about it.
 ---
 <sup>I am a bot | [`what is my purpose`](https://github.com/Elucidation/existential_rick_bot 'don't think about it')</sup>
 

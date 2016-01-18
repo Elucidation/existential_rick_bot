@@ -60,7 +60,8 @@ def logInfoPerSubmission(submission, count, count_actual):
     print("\n\t---\n\t%s - %d processed submissions, %d read\n" % (datetime.now(), count_actual, count))
     logInfoPerSubmission.last = time.time()
   
-  print("#%d Submission(%s): %s" % (count, submission.id, submission))
+  print("#%d Submission(%s): %s" % (count, submission.id, str(submission).encode('ascii','ignore')))
+
 logInfoPerSubmission.last = time.time() # 'static' variable
 
 def loadProcessed(processed_filename=processed_filename):
@@ -108,7 +109,7 @@ while running:
       # check if submission title is a question
       if isExistentialQuestion(submission.title):
         # generate response
-        msg = "## %s%s" % (getAnswerToExistentialQuestion(), getResponseFooter())
+        msg = "%s%s" % (getAnswerToExistentialQuestion(), getResponseFooter())
         # respond, keep trying till success
         while True:
           try:
