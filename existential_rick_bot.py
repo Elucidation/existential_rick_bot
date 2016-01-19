@@ -50,6 +50,7 @@ def getResponseFooter():
 
 def waitWithComments(sleep_time, segment=60):
   """Sleep for sleep_time seconds, printing to stdout every segment of time"""
+  print("\t%s - %s seconds to go..." % (datetime.now(), sleep_time))
   while sleep_time > segment:
     time.sleep(segment) # sleep in increments of 1 minute
     sleep_time -= segment
