@@ -38,7 +38,7 @@ processed_filename = "submissions_already_processed.txt"
 #########################################################
 # Helper Functions
 
-questions = ['why', 'happened to', 'think?'] # Match if any of these are found in message
+questions = ['why', 'happen', 'think?'] # Match if any of these are found in message
 def isExistentialQuestion(message):
   return '?' in message and any([q in message.lower() for q in questions])
 
