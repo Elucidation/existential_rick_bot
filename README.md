@@ -10,7 +10,7 @@ The phrase "[Don't think about it](https://youtu.be/ItV8utelYlc)" is said by Ric
 The core logic is found on [lines ~41-44](existential_rick_bot.py#L41):
 
 ``` python
-questions = ['why', 'happened to', 'think?'] # Match if any of these are found in message
+questions = ['why', 'happen', 'think?'] # Match if any of these are found in message
 def isExistentialQuestion(message):
   return '?' in message and any([q in message.lower() for q in questions])
 
