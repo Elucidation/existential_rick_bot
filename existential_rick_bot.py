@@ -125,7 +125,7 @@ while running:
             saveProcessed(already_processed)
             count_actual += 1
             # Wait after submitting to not overload
-            waitWithComments(600)
+            waitWithComments(300)
             break
           except praw.errors.AlreadySubmitted as e:
             print("> %s - Already submitted skipping..." % datetime.now())
