@@ -29,6 +29,11 @@ The answer is don't think about it.
 
 <sup>I am a bot | [`what is my purpose`](https://github.com/Elucidation/existential_rick_bot 'don't think about it')</sup>
 
+## Developers
+To set up praw credentials modify `example_praw.ini` with the correct credentials and rename the file to `praw.ini`.
+
+One way to run this is to use `docker run elucidation/existential_rick_bot`.
+
 
 ## Feedback/Comments
 
