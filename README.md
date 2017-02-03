@@ -1,5 +1,7 @@
 # ExistentialRickBot
 
+**[Dockerized](https://hub.docker.com/r/elucidation/existential_rick_bot/) and updated for PRAW4.3**
+
 [/u/ExistentialRickBot](https://www.reddit.com/user/ExistentialRickBot/) is a [Reddit](http://www.reddit.com) Bot who finds meaning in life by listening to submissions on [/r/rickandmorty](https://www.reddit.com/r/rickandmorty/) subreddit and answering any questions as best it can.
 
 ## Meaning
