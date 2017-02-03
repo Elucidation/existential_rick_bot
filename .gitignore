@@ -1,5 +1,5 @@
-# Ignore reddit username/password config file
-auth_config.py
+# Ignore reddit credential files
+praw.ini
 
 # Ignore tracking files
 *.txt
