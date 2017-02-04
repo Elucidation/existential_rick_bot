@@ -1,6 +1,6 @@
 # ExistentialRickBot
 
-**[Dockerized](https://hub.docker.com/r/elucidation/existential_rick_bot/) and updated for PRAW4.3**
+*[Autobuilding Docker image](https://hub.docker.com/r/elucidation/existential_rick_bot/) and updated for PRAW4.3*
 
 [/u/ExistentialRickBot](https://www.reddit.com/user/ExistentialRickBot/) is a [Reddit](http://www.reddit.com) Bot who finds meaning in life by listening to submissions on [/r/rickandmorty](https://www.reddit.com/r/rickandmorty/) subreddit and answering any questions as best it can.
 
@@ -9,7 +9,7 @@ The phrase "[Don't think about it](https://youtu.be/ItV8utelYlc)" is said by Ric
 
 
 ## Logic
-The core logic is found on [lines ~41-44](existential_rick_bot.py#L41):
+The core logic is found in [existential_rock_bot.py](existential_rick_bot.py#L15):
 
 ``` python
 def isExistentialQuestion(message):
