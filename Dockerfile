@@ -14,10 +14,10 @@ RUN pip install --upgrade praw
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-COPY . /tmp/erb/
-# Once the docker instance is up, copy over your praw.ini file for credentials
-# into /tmp/erb
-# Then manually start the script from inside in headless mode using:
-# <machine>$ docker exec -it <container> /bin/bash
-# <docker>$ cd /tmp/erb
-# <docker>$ nohup python -u existential_rick_bot.py > out.log 2> out_error.log &
+# Copy code over
+COPY . /erb/
+
+WORKDIR /erb
+
+# Run existentialrickbot by default
+CMD ["/erb/run_erb.sh"]
