@@ -14,7 +14,7 @@ from erb_helpers import *
 
 def isExistentialQuestion(message):
   return '?' in message and any(
-    [q in message.lower() for q in ['why', 'happen', 'think', 'season 4', 'season three']])
+    [q in message.lower() for q in ['why', 'happen', 'think', 'season 4', 'season four']])
 
 def getAnswerToExistentialQuestion():
   return "The answer is don't think about it."
