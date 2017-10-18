@@ -9,6 +9,7 @@ import socket
 import time
 from datetime import datetime
 import argparse
+from random import random
 
 from erb_helpers import *
 
@@ -31,18 +32,22 @@ def startStream(args):
     # Check if submission passes requirements and wasn't already replied to
     if isExistentialQuestion(submission.title):
       if not previouslyRepliedTo(submission, erb):
-        # Generate response
-        response = generateResponseMessage(getAnswerToExistentialQuestion())
+        # Is a respondable message, roll dice to decide if we comment or skip
+        if random() < args.probability:
+          # Generate response
+          response = generateResponseMessage(getAnswerToExistentialQuestion())
 
-        # Reply to submission with response
-        if not args.dry:
-          logMessage(submission,"[REPLIED]")
-          submission.reply(response)
+          # Reply to submission with response
+          if not args.dry:
+            logMessage(submission,"[REPLIED]")
+            submission.reply(response)
+          else:
+            logMessage(submission,"[DRY-RUN-REPLIED]")
+
+          # Wait after submitting to not overload
+          waitWithComments(300)
         else:
-          logMessage(submission,"[DRY-RUN-REPLIED]")
-
-        # Wait after submitting to not overload
-        waitWithComments(300)
+          logMessage(submission,"[SKIP-NO-DICE]") # Skip since dice roll didn't pass
       else:
         logMessage(submission,"[SKIP]") # Skip since replied to already
 
@@ -77,5 +82,7 @@ if __name__ == '__main__':
   parser = argparse.ArgumentParser()
   parser.add_argument('--dry', help='dry run (don\'t actually submit replies)',
                       action="store_true", default=False)
+  parser.add_argument("--probability", type=float,
+                    help="Percentage of time to respond to a post", default=0.2)
   args = parser.parse_args()
   main(args)
